@@ -1,0 +1,46 @@
+{
+  "homepage": "https://www.curseforge.com/minecraft/mc-mods/let-me-sleep",
+  "1.14.4": {
+    "1.2.2": "Fixed non-working config (wake_up_actions.\"Effects To Apply\")"
+  },
+  "1.15": {
+    "1.2.2": "Fixed non-working config (wake_up_actions.\"Effects To Apply\")"
+  },
+  "1.15.1": {
+    "1.2.2": "Fixed non-working config (wake_up_actions.\"Effects To Apply\")"
+  },
+  "1.15.2": {
+    "1.2.2": "Fixed non-working config (wake_up_actions.\"Effects To Apply\")"
+  },
+  "1.16.1": {
+    "1.2.2": "Fixed non-working config (wake_up_actions.\"Effects To Apply\")"
+  },
+  "1.16.2": {
+    "1.2.2": "Fixed non-working config (wake_up_actions.\"Effects To Apply\")"
+  },
+  "1.16.3": {
+    "1.2.2": "Fixed non-working config (wake_up_actions.\"Effects To Apply\")"
+  },
+  "promos": {
+    "1.14.4-latest": "1.2.2",
+    "1.14.4-recommended": "1.2.2",
+
+    "1.15-latest": "1.2.2",
+    "1.15-recommended": "1.2.2",
+
+    "1.15.1-latest": "1.2.2",
+    "1.15.1-recommended": "1.2.2",
+
+    "1.15.2-latest": "1.2.2",
+    "1.15.2-recommended": "1.2.2",
+
+    "1.16.1-latest": "1.2.2",
+    "1.16.1-recommended": "1.2.2",
+
+    "1.16.2-latest": "1.2.2",
+    "1.16.2-recommended": "1.2.2",
+
+    "1.16.3-latest": "1.2.2",
+    "1.16.3-recommended": "1.2.2"
+  }
+}
