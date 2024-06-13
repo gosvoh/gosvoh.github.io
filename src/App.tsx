@@ -10,22 +10,37 @@ import {
 } from "@/components/ui/card";
 import { Button } from "./components/ui/button";
 import { ExternalLink } from "lucide-react";
+import BioconLogo from "./assets/biocon-logo.png";
+import ChemLabLogo from "./assets/chem-lab-logo.jpg";
+import LmsLogo from "./assets/lms-logo.png";
 
 function ProjectCard({
   title,
   description,
   url,
   github,
+  image,
 }: {
   title: string;
   description: string;
   url?: string;
   github?: string;
+  image?: string;
 }) {
   return (
-    <Card>
+    <Card className="flex flex-col justify-between">
       <CardHeader>
-        <CardTitle>{title}</CardTitle>
+        <CardTitle className="inline-flex items-center gap-2">
+          {title}
+          {image && (
+            <Avatar>
+              <AvatarImage
+                src={image}
+                alt="Фотография Алексея Вохмина на фоне зимнего леса"
+              />
+            </Avatar>
+          )}
+        </CardTitle>
         {url && (
           <CardDescription>
             <a href={url} target="_blank">
@@ -98,7 +113,8 @@ function App() {
             разработки.
           </p>
           <p>
-            В настоящее время работаю в{" "}
+            В настоящее время являюсь сутрудником и студентом магистратуры по
+            направлению &#171;Веб-технологии&#187; в{" "}
             <a
               href="https://itmo.ru/"
               target="_blank"
@@ -117,28 +133,46 @@ function App() {
               description="Веб-сайт международной конференции по промышленной биотехнологии в Альметьевске (Республика Татарстан)"
               url="https://biocon.international"
               github="https://github.com/gosvoh/biocon"
+              image={BioconLogo}
             />
             <ProjectCard
               title="SEROVA.CAREERS"
-              description="Сайт-визитка Надежды Серовой - карьерного консультанта"
+              description="Сайт-визитка Надежды Серовой — карьерного консультанта"
               url="https://serova.careers"
+              image="https://serova.careers/favicon.ico"
             />
             <ProjectCard
               title="Kover roller"
               description="Сайт для получения случайного мода с сайта nexusmods, сделан в свободное время для Twitch-стримера @kover_undercover"
               url="https://kover-under-games.vercel.app"
               github="https://github.com/gosvoh/kover_under_games"
+              image="https://raw.githubusercontent.com/gosvoh/kover_under_games/main/public/pepe-peepo.gif"
             />
             <ProjectCard
               title="Chem-lab"
               description="Веб-приложение, предназначенное для обучения химии лиц с ограниченными возможностями (ДЦП). Создано в рамках проекта РНФ №22-78-00101"
               url="https://chem-lab.cedne.ru"
+              image={ChemLabLogo}
             />
             <ProjectCard
               title="Narupa ITMO SCAMT"
               description="VR приложение для обучения химии в виртуальной реальности с использованием технологии Eye Tracking. Создано в рамках проекта НИР для научной статьи"
               github="https://github.com/gosvoh/ITMO-SCAMT-Ilya"
               url="https://doi.org/10.1021/acs.jchemed.3c00138"
+              image="https://raw.githubusercontent.com/gosvoh/ITMO-SCAMT-Ilya/master/Assets/NarupaIMD/Assets/Logos/logo-1024.png"
+            />
+            <ProjectCard
+              title="Get exp for everything"
+              description="Модификация для игры Minecraft, добавляющая опыт за действия в игре"
+              github="https://github.com/gosvoh/GetExpForEverything"
+              url="https://curseforge.com/minecraft/mc-mods/get-exp-for-everything"
+              image="https://raw.githubusercontent.com/gosvoh/GetExpForEverything/1.17/src/main/resources/logo.jpeg"
+            />
+            <ProjectCard
+              title="LMS 2.0"
+              description="LMS 2.0 — это платформа, предлагающая развитие практических навыков для профессионалов в области кибербезопасности, системного администрирования и т. д. Занимался front-end разработкой"
+              url="https://lms.itmo.xyz"
+              image={LmsLogo}
             />
           </div>
         </section>

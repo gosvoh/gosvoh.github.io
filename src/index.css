@@ -30,6 +30,7 @@
 @layer base {
   * {
     @apply border-border;
+    @apply transition-all;
   }
 
   body {
