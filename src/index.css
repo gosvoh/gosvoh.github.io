@@ -30,7 +30,6 @@
 @layer base {
   * {
     @apply border-border;
-    @apply transition-all;
   }
 
   body {
@@ -46,8 +45,16 @@
     @apply text-xl md:text-2xl lg:text-3xl xl:text-4xl 2xl:text-5xl my-2 md:my-4;
   }
 
-  section > h2 {
-    @apply text-center font-bold;
+  p {
+    @apply text-base md:text-lg lg:text-xl xl:text-2xl my-2 md:my-4;
+  }
+
+  section {
+    @apply my-8 md:my-12 lg:my-16 xl:my-20 2xl:my-24;
+
+    & > h2 {
+      @apply text-center font-bold;
+    }
   }
 
   a {

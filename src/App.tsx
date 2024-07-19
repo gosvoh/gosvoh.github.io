@@ -28,7 +28,7 @@ function ProjectCard({
   image?: string;
 }) {
   return (
-    <Card className="flex flex-col justify-between">
+    <Card className="flex flex-col">
       <CardHeader>
         <CardTitle className="inline-flex items-center gap-2">
           {title}
@@ -50,9 +50,9 @@ function ProjectCard({
         )}
       </CardHeader>
       <CardContent>
-        <p>{description}</p>
+        <p className="text-base md:text-lg">{description}</p>
       </CardContent>
-      <CardFooter className="flex flex-row gap-2">
+      <CardFooter className="flex flex-row gap-2 mt-auto">
         {url && (
           <Button variant="outline" size="icon" asChild>
             <a href={url} target="_blank">
@@ -113,7 +113,7 @@ function App() {
             разработки.
           </p>
           <p>
-            В настоящее время являюсь сутрудником и студентом магистратуры по
+            В настоящее время являюсь сотрудником и студентом магистратуры по
             направлению &#171;Веб-технологии&#187; в{" "}
             <a
               href="https://itmo.ru/"
@@ -173,6 +173,12 @@ function App() {
               description="LMS 2.0 — это платформа, предлагающая развитие практических навыков для профессионалов в области кибербезопасности, системного администрирования и т. д. Занимался front-end разработкой"
               url="https://lms.itmo.xyz"
               image={LmsLogo}
+            />
+            <ProjectCard
+              title="Biotech.Industries"
+              description="Веб-сайт подразделения факультета биотехнологий Университета ИТМО"
+              url="https://biotech.industries"
+              image="https://biotech.industries/favicon.ico"
             />
           </div>
         </section>
