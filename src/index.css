@@ -54,6 +54,7 @@
 
     & > h2 {
       @apply text-center font-bold;
+      @apply md:mb-8;
     }
   }
 
