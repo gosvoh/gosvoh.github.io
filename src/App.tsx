@@ -20,6 +20,7 @@ import {
 import BioconLogo from "./assets/biocon-logo.png";
 import ChemLabLogo from "./assets/chem-lab-logo.jpg";
 import LmsLogo from "./assets/lms-logo.png";
+import { useEffect } from "react";
 
 function ProjectCard({
   title,
@@ -35,7 +36,7 @@ function ProjectCard({
   image?: string;
 }) {
   return (
-    <Card className="flex flex-col">
+    <Card className="flex flex-col card">
       <CardHeader>
         <CardTitle className="inline-flex items-center gap-4">
           {title}
@@ -90,6 +91,32 @@ function SocialLink({ href, Icon }: { href: string; Icon: IconType }) {
 }
 
 function App() {
+  useEffect(() => {
+    const cards = document
+      .getElementsByClassName("cards")
+      .item(0) as HTMLDivElement | null;
+    if (!cards) return;
+
+    const event = (e: MouseEvent) => {
+      for (const card of document.getElementsByClassName(
+        "card"
+      ) as HTMLCollectionOf<HTMLDivElement>) {
+        const rect = card.getBoundingClientRect(),
+          x = e.clientX - rect.left,
+          y = e.clientY - rect.top;
+
+        card.style.setProperty("--mouse-x", `${x}px`);
+        card.style.setProperty("--mouse-y", `${y}px`);
+      }
+    };
+
+    cards.addEventListener("mousemove", event);
+
+    return () => {
+      cards.removeEventListener("mousemove", () => {});
+    };
+  }, []);
+
   return (
     <>
       <header className="flex flex-col md:flex-row gap-4 items-center">
@@ -149,7 +176,7 @@ function App() {
         </section>
         <section>
           <h2>Проекты</h2>
-          <div className="grid gap-4 grid-cols-1 md:grid-cols-2 xl:grid-cols-3">
+          <div className="cards grid gap-4 grid-cols-1 md:grid-cols-2 xl:grid-cols-3">
             <ProjectCard
               title="BIOCON"
               description="Веб-сайт международной конференции по промышленной биотехнологии в Альметьевске (Республика Татарстан)"
